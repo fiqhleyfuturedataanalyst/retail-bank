@@ -3,356 +3,295 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Student simulation brochure: Maybank MaxiHome Flexi recommendation for Norman Umar." />
-  <title>Norman's First Home | MaxiHome Flexi</title>
+  <meta name="description" content="Maybank MaxiHome Flexi home financing brochure prepared for Norman Umar." />
+  <title>Maybank MaxiHome Flexi | Norman Umar</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <div class="screen-note">
-    <strong>Print tip:</strong> This is a 2-sided A4 landscape tri-fold brochure.
-    Print at 100% scale, double-sided, flip on short edge.
+  <div class="toolbar no-print">
+    <div>
+      <strong>Maybank MaxiHome Flexi</strong>
+      <span>Personalised home financing brochure</span>
+    </div>
+    <button onclick="window.print()">Print / Save as PDF</button>
   </div>
 
-  <!-- ======================================================
-       PAGE 1 — OUTSIDE PANELS
-       Order when printed: Back | Front Cover | Fold-in Flap
-       ====================================================== -->
-  <main class="sheet sheet--outside">
+  <!-- ========================= PAGE 1 ========================= -->
+  <main class="page page--cover">
+    <header class="brandbar">
+      <img src="assets/maybank-logo.png" alt="Maybank" class="logo" />
+      <div class="brandbar__right">
+        <span>HOME FINANCING</span>
+        <strong>MAXIHOME FLEXI</strong>
+      </div>
+    </header>
 
-    <!-- BACK PANEL -->
-    <section class="panel panel--back">
-      <div>
-        <div class="mini-brand">
-          <span class="mini-brand__mark">M</span>
-          <span>HOME FINANCING</span>
-        </div>
-
-        <h2>Ready for the next step?</h2>
-        <p class="body-copy">
-          Before applying, prepare your key income and property documents so your
-          Relationship Manager can assess affordability and financing eligibility.
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="kicker">YOUR FIRST HOME, YOUR WAY</p>
+        <h1>
+          Make your money<br />
+          work <span>harder</span><br />
+          for your home.
+        </h1>
+        <p class="hero__lead">
+          A flexible home loan designed to help you reduce interest,
+          manage extra cash and work towards owning your home sooner.
         </p>
 
-        <div class="checklist">
-          <div class="check"><span>✓</span><p>NRIC / identification</p></div>
-          <div class="check"><span>✓</span><p>Latest salary slips / income evidence</p></div>
-          <div class="check"><span>✓</span><p>Property booking / sale documents</p></div>
-          <div class="check"><span>✓</span><p>Details of current financial commitments</p></div>
+        <div class="hero__name">
+          <small>PREPARED FOR</small>
+          <strong>Norman Umar</strong>
+          <span>First-home buyer · Kuala Lumpur</span>
         </div>
       </div>
 
-      <div class="contact-box">
-        <p class="eyebrow">YOUR RELATIONSHIP MANAGER</p>
-        <h3>Let’s turn the numbers into a plan.</h3>
-        <p>
-          We’ll review your commitments, affordability, preferred tenure and
-          property details before any final recommendation.
-        </p>
-        <div class="contact-line">
-          <span>Relationship Manager</span>
-          <strong>Your Name</strong>
-        </div>
-        <div class="contact-line">
-          <span>Branch</span>
-          <strong>Maybank</strong>
-        </div>
-      </div>
-
-      <p class="fine-print">
-        Student simulation only — not an official Maybank marketing brochure.
-        Product eligibility, pricing and approval are subject to Maybank’s lending
-        criteria, terms and conditions. Information checked against Maybank’s
-        official MaxiHome Flexi materials in October 2026.
-      </p>
-    </section>
-
-    <!-- FRONT COVER -->
-    <section class="panel panel--cover">
-      <div class="cover-rings cover-rings--one"></div>
-      <div class="cover-rings cover-rings--two"></div>
-
-      <div class="cover-top">
-        <div class="brand-lockup">
-          <div class="brand-mark">M</div>
-          <div>
-            <div class="brand-name">MAYBANK</div>
-            <div class="brand-sub">HOME FINANCING</div>
+      <div class="hero__graphic" aria-hidden="true">
+        <div class="house">
+          <div class="house__roof"></div>
+          <div class="house__body">
+            <div class="house__window"></div>
+            <div class="house__door"></div>
           </div>
         </div>
-        <span class="student-tag">STUDENT RM SIMULATION</span>
-      </div>
-
-      <div class="cover-content">
-        <p class="eyebrow eyebrow--light">FOR NORMAN UMAR</p>
-        <h1>Your first home.<br><em>More flexibility.</em></h1>
-        <p class="cover-lead">
-          A mortgage recommendation designed around your goal of owning a
-          RM500,000 condominium while keeping control of your cash flow.
-        </p>
-
-        <div class="cover-product">
-          <span>Recommended</span>
-          <strong>MaxiHome Flexi Loan</strong>
-        </div>
-      </div>
-
-      <div class="cover-bottom">
-        <div>
-          <span class="cover-stat__label">PROPERTY GOAL</span>
-          <strong>RM500,000</strong>
-        </div>
-        <div>
-          <span class="cover-stat__label">PREFERRED TENURE</span>
-          <strong>25 years</strong>
-        </div>
-        <div>
-          <span class="cover-stat__label">DOWN PAYMENT AVAILABLE</span>
-          <strong>RM75,000</strong>
-        </div>
+        <div class="coin coin--1">RM</div>
+        <div class="coin coin--2">+</div>
+        <div class="coin coin--3">↓</div>
       </div>
     </section>
 
-    <!-- FOLD-IN FLAP -->
-    <section class="panel panel--flap">
-      <p class="eyebrow">WHY THIS RECOMMENDATION</p>
-      <h2>Built around how you want to manage money.</h2>
-      <p class="body-copy">
-        Norman is financially literate, career-focused and already managing several
-        commitments. The priority is not simply getting the largest loan — it is
-        finding a structure that supports home ownership without losing financial
-        flexibility.
-      </p>
-
-      <div class="profile-card">
-        <div class="avatar">NU</div>
-        <div>
-          <h3>Norman Umar</h3>
-          <p>30 · Accountant · First-home buyer</p>
-        </div>
+    <section class="yellow-intro">
+      <div>
+        <p class="section-label">WHY MAXIHOME FLEXI?</p>
+        <h2>Home loan + deposits.<br />One flexible account.</h2>
       </div>
-
-      <div class="profile-grid">
-        <div class="profile-item">
-          <span>Gross annual income</span>
-          <strong>RM80,000</strong>
-        </div>
-        <div class="profile-item">
-          <span>Cash in current + savings</span>
-          <strong>RM45,000</strong>
-        </div>
-        <div class="profile-item">
-          <span>Stocks</span>
-          <strong>RM10,000</strong>
-        </div>
-        <div class="profile-item">
-          <span>Existing debt balances</span>
-          <strong>RM75,000*</strong>
-        </div>
-      </div>
-
-      <p class="micro-note">
-        *Personal loan RM20,000 + car loan RM50,000 + credit-card outstanding RM5,000.
-        Monthly repayment amounts are not provided in the case study and must be
-        confirmed before assessing affordability.
+      <p>
+        MaxiHome Flexi combines your home loan, savings and current account
+        functions. Extra money placed into the account reduces your outstanding
+        principal, helping you save on interest while keeping access to excess
+        payments when you need them.
       </p>
+    </section>
 
-      <div class="priority-strip">
-        <span>LOWER CASH-FLOW PRESSURE</span>
-        <span>FLEXIBLE REPAYMENT</span>
-        <span>LONG-TERM CONTROL</span>
+    <section class="benefits-grid">
+      <article class="benefit-card benefit-card--dark">
+        <div class="benefit-icon">3<span>IN</span>1</div>
+        <h3>One integrated account</h3>
+        <p>Home loan, savings and current account functions in one facility.</p>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-icon">RM↓</div>
+        <h3>Reduce interest</h3>
+        <p>Cash deposits immediately reduce the outstanding principal used to calculate interest.</p>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-icon">↔</div>
+        <h3>Flexible repayments</h3>
+        <p>Deposit extra amounts whenever you choose and withdraw excess payments when needed.</p>
+      </article>
+
+      <article class="benefit-card benefit-card--yellow">
+        <div class="benefit-icon">90%</div>
+        <h3>Up to 90% financing</h3>
+        <p>Subject to Maybank's credit assessment, property valuation and applicable terms.</p>
+      </article>
+    </section>
+
+    <section class="feature-strip">
+      <div>
+        <strong>35 years</strong>
+        <span>Maximum tenure, or age 70, whichever comes first</span>
+      </div>
+      <div>
+        <strong>Daily</strong>
+        <span>Interest computation for immediate interest savings</span>
+      </div>
+      <div>
+        <strong>Flexible</strong>
+        <span>Extra deposits and excess-payment withdrawals</span>
       </div>
     </section>
+
+    <footer class="page-footer page-footer--cover">
+      <div>
+        <strong>MaxiHome Flexi</strong>
+        <span>Flexible home financing for residential properties.</span>
+      </div>
+      <div class="footer-mark">Maybank</div>
+    </footer>
   </main>
 
-  <!-- ======================================================
-       PAGE 2 — INSIDE PANELS
-       ====================================================== -->
-  <main class="sheet sheet--inside">
+  <!-- ========================= PAGE 2 ========================= -->
+  <main class="page page--profile">
+    <header class="brandbar brandbar--compact">
+      <img src="assets/maybank-logo.png" alt="Maybank" class="logo" />
+      <div class="brandbar__right">
+        <span>PERSONALISED FINANCING ILLUSTRATION</span>
+        <strong>NORMAN UMAR</strong>
+      </div>
+    </header>
 
-    <!-- INSIDE LEFT -->
-    <section class="panel panel--inside panel--inside-left">
-      <p class="eyebrow">THE FIT</p>
-      <h2>Why MaxiHome Flexi?</h2>
-      <p class="body-copy">
-        MaxiHome Flexi combines the home loan with deposit functionality so extra
-        cash can work against the outstanding loan balance. That aligns with
-        Norman’s preference for flexibility and his longer-term goal of building
-        wealth while managing debt.
-      </p>
-
-      <div class="feature-stack">
-        <article class="feature">
-          <div class="feature__icon">↘</div>
-          <div>
-            <h3>Pay more, reduce principal</h3>
-            <p>
-              Savings placed into the Flexi account automatically reduce the
-              outstanding principal, helping reduce interest.
-            </p>
-          </div>
-        </article>
-
-        <article class="feature">
-          <div class="feature__icon">↔</div>
-          <div>
-            <h3>Flexible repayment</h3>
-            <p>
-              Deposit extra amounts when cash flow allows and withdraw excess
-              payments when needed, subject to product terms.
-            </p>
-          </div>
-        </article>
-
-        <article class="feature">
-          <div class="feature__icon">⌂</div>
-          <div>
-            <h3>Up to 90% financing</h3>
-            <p>
-              Maybank states a financing margin of up to 90%, subject to approval
-              and applicable terms.
-            </p>
-          </div>
-        </article>
-
-        <article class="feature">
-          <div class="feature__icon">35</div>
-          <div>
-            <h3>Long tenure available</h3>
-            <p>
-              Tenure is available up to 35 years or age 70, whichever occurs first.
-            </p>
-          </div>
-        </article>
+    <section class="profile-hero">
+      <div>
+        <p class="section-label">YOUR HOME GOAL</p>
+        <h2>RM500,000 condominium<br />in Kuala Lumpur</h2>
+        <p>
+          Close to work, good amenities and an eco-friendly design —
+          while keeping monthly commitments manageable.
+        </p>
+      </div>
+      <div class="profile-badge">
+        <span>AGE</span>
+        <strong>30</strong>
+        <small>ACCOUNTANT</small>
       </div>
     </section>
 
-    <!-- INSIDE CENTRE -->
-    <section class="panel panel--inside panel--inside-centre">
-      <p class="eyebrow eyebrow--light">NORMAN'S ILLUSTRATION</p>
-      <h2>A starting point for the conversation.</h2>
+    <section class="snapshot">
+      <div class="snapshot__title">
+        <p class="section-label">YOUR FINANCIAL SNAPSHOT</p>
+        <h2>Strong savings base.<br />Existing commitments to manage.</h2>
+      </div>
 
-      <div class="finance-card">
-        <div class="finance-row">
-          <span>Property budget</span>
-          <strong>RM500,000</strong>
-        </div>
-        <div class="finance-row">
+      <div class="snapshot__grid">
+        <article>
+          <span>Annual income</span>
+          <strong>RM80,000</strong>
+        </article>
+        <article>
+          <span>Current account</span>
+          <strong>RM15,000</strong>
+        </article>
+        <article>
+          <span>Savings account</span>
+          <strong>RM30,000</strong>
+        </article>
+        <article>
+          <span>Stocks</span>
+          <strong>RM10,000</strong>
+        </article>
+        <article class="snapshot__debt">
+          <span>Personal loan outstanding</span>
+          <strong>RM20,000</strong>
+        </article>
+        <article class="snapshot__debt">
+          <span>Car loan outstanding</span>
+          <strong>RM50,000</strong>
+        </article>
+        <article class="snapshot__debt">
+          <span>Credit card outstanding</span>
+          <strong>RM5,000</strong>
+        </article>
+        <article>
           <span>Available down payment</span>
           <strong>RM75,000</strong>
+        </article>
+      </div>
+
+      <p class="snapshot__note">
+        Monthly instalments for Norman's existing loans are not stated in the customer
+        profile and must be confirmed before a final affordability assessment.
+      </p>
+    </section>
+
+    <section class="illustration">
+      <div class="illustration__heading">
+        <p class="section-label section-label--black">YOUR FINANCING ILLUSTRATION</p>
+        <h2>A practical starting structure</h2>
+      </div>
+
+      <div class="numbers">
+        <div class="number-box">
+          <span>Property price</span>
+          <strong>RM500,000</strong>
         </div>
-        <div class="finance-divider"></div>
-        <div class="finance-row finance-row--hero">
-          <span>Illustrative financing</span>
+        <div class="math-sign">−</div>
+        <div class="number-box">
+          <span>Down payment</span>
+          <strong>RM75,000</strong>
+        </div>
+        <div class="math-sign">=</div>
+        <div class="number-box number-box--dark">
+          <span>Illustrative loan</span>
           <strong>RM425,000</strong>
         </div>
-        <div class="finance-row">
-          <span>Financing ratio</span>
-          <strong>85%</strong>
-        </div>
-        <div class="finance-row">
+      </div>
+
+      <div class="repayment-card">
+        <div>
           <span>Preferred tenure</span>
           <strong>25 years</strong>
         </div>
-      </div>
-
-      <div class="payment-card">
-        <p>Illustrative monthly instalment</p>
-        <strong>≈ RM2,220</strong>
-        <span>using Norman’s target rate of 3.9% p.a. over 25 years</span>
-      </div>
-
-      <div class="warning-card">
-        <strong>Important</strong>
-        <p>
-          This RM2,220 figure is an illustration, not a quoted Maybank instalment.
-          Actual rates can change and approval depends on full credit assessment,
-          including Norman’s monthly car, personal-loan and credit-card commitments.
-        </p>
-      </div>
-
-      <div class="mini-math">
         <div>
-          <span>RM75K</span>
-          <small>15% down payment</small>
+          <span>Norman's target rate</span>
+          <strong>3.9% p.a.</strong>
         </div>
-        <div class="mini-math__plus">+</div>
-        <div>
-          <span>RM425K</span>
-          <small>85% financing</small>
+        <div class="repayment-card__hero">
+          <span>Illustrative monthly instalment</span>
+          <strong>≈ RM2,220</strong>
+          <small>Based on RM425,000 over 25 years at 3.9% p.a.</small>
         </div>
-        <div class="mini-math__plus">=</div>
+      </div>
+
+      <div class="fit-callout">
+        <div class="fit-callout__icon">✓</div>
         <div>
-          <span>RM500K</span>
-          <small>home budget</small>
+          <h3>Why this structure fits Norman</h3>
+          <p>
+            RM425,000 represents 85% of the RM500,000 property price, which sits
+            within MaxiHome Flexi's advertised financing margin of up to 90%.
+            The flexi structure also supports Norman's preference for repayment
+            flexibility while he continues managing other debts and building savings.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- INSIDE RIGHT -->
-    <section class="panel panel--inside panel--inside-right">
-      <p class="eyebrow">THE SALES STORY</p>
-      <h2>Flexibility today. Progress tomorrow.</h2>
-
-      <blockquote>
-        “Norman, you’ve told me that your priority is buying your first home without
-        putting too much pressure on your existing commitments. That’s why I’d like
-        us to look at MaxiHome Flexi.”
-      </blockquote>
-
-      <div class="pitch-steps">
-        <div class="pitch-step">
-          <span>01</span>
-          <div>
-            <h3>Start with affordability</h3>
-            <p>
-              Confirm monthly debt commitments and preserve enough cash for
-              emergencies and property-related costs.
-            </p>
-          </div>
-        </div>
-
-        <div class="pitch-step">
-          <span>02</span>
-          <div>
-            <h3>Use flexibility as income grows</h3>
-            <p>
-              As Norman progresses in his career, additional cash can be paid into
-              the Flexi account to reduce principal and potentially shorten the loan.
-            </p>
-          </div>
-        </div>
-
-        <div class="pitch-step">
-          <span>03</span>
-          <div>
-            <h3>Keep access to excess funds</h3>
-            <p>
-              The product’s redraw flexibility can help Norman avoid locking away
-              every extra ringgit while still using spare cash efficiently.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="next-step">
-        <p class="eyebrow">NEXT STEP</p>
-        <h3>Complete the affordability check.</h3>
+    <section class="next-steps">
+      <div class="next-steps__intro">
+        <p class="section-label">NEXT STEP</p>
+        <h2>Let's complete your affordability review.</h2>
         <p>
-          Bring the latest income evidence, monthly commitment figures and property
-          documents. We’ll then compare the approved rate, tenure and total cost.
+          Bring the documents below so we can assess the final financing amount,
+          approved rate and monthly repayment.
         </p>
       </div>
 
-      <div class="source-note">
-        <strong>Source notes</strong>
-        <p>
-          Customer facts: K-Youth “Understanding Your Customer” case material.
-          Product features: Maybank Malaysia — MaxiHome Flexi Loan official product
-          page. Product details may change; always check the latest PDS before use.
-        </p>
+      <div class="docs-grid">
+        <div><span>01</span><p>NRIC / Identity Card</p></div>
+        <div><span>02</span><p>Latest 3 consecutive months' salary slips</p></div>
+        <div><span>03</span><p>Property booking receipt / Sale & Purchase documents</p></div>
+        <div><span>04</span><p>Details of existing monthly loan and card commitments</p></div>
       </div>
     </section>
+
+    <section class="legal">
+      <strong>Important information</strong>
+      <p>
+        This personalised illustration is for discussion purposes only and does not
+        constitute an offer or approval of credit. The RM2,220 monthly amount is a
+        mathematical illustration using Norman's stated target rate of 3.9% p.a.;
+        it is not a quoted Maybank lending rate. Actual financing amount, margin,
+        rate, instalment and approval are subject to Maybank's credit assessment,
+        property valuation, prevailing rates, terms and conditions.
+      </p>
+      <p>
+        MaxiHome Flexi product features referenced from Maybank Malaysia's official
+        MaxiHome Flexi Loan information. Customer details are based on Norman's
+        supplied customer profile.
+      </p>
+    </section>
+
+    <footer class="page-footer">
+      <div>
+        <strong>Maybank MaxiHome Flexi</strong>
+        <span>Flexible repayments · Reduce principal with deposits · Up to 90% financing</span>
+      </div>
+      <div class="footer-mark">Maybank</div>
+    </footer>
   </main>
 
 </body>
