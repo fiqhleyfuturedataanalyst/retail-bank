@@ -3,366 +3,684 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Maybank home loan comparison brochure: MaxiHome, MaxiHome Flexi and MaxiHome Ezy." />
-  <title>Find Your Maybank Home Loan Fit</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Maybank home loan comparison brochure." />
+  <title>Maybank Home Financing — Find Your Fit</title>
+  <style>
+/* ============================================================
+   MAYBANK HOME FINANCING — PREMIUM EDITORIAL TRI-FOLD
+   A4 landscape | double-sided | 100mm / 100mm / 97mm
+   ============================================================ */
+
+:root{
+  --yellow:#ffd100;
+  --black:#101010;
+  --ink:#171717;
+  --warm:#f4f2ec;
+  --paper:#fcfbf8;
+  --grey:#6e6c66;
+  --line:#d9d6cf;
+  --white:#fff;
+}
+
+*{box-sizing:border-box}
+html{background:#d8d8d8}
+body{
+  margin:0;
+  background:#d8d8d8;
+  color:var(--ink);
+  font-family:Arial,Helvetica,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+button{font:inherit}
+h1,h2,h3,p{margin-top:0}
+
+.toolbar{
+  width:min(1180px,calc(100% - 28px));
+  margin:16px auto 10px;
+  padding:10px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  border-radius:10px;
+  color:#fff;
+  background:#171717;
+  box-shadow:0 8px 28px rgba(0,0,0,.16);
+}
+.toolbar div{display:flex;flex-direction:column;gap:2px}
+.toolbar strong{font-size:13px}
+.toolbar span{font-size:11px;color:#aaa}
+.toolbar button{
+  border:0;border-radius:6px;padding:9px 14px;
+  background:var(--yellow);color:#111;font-weight:900;cursor:pointer;
+}
+
+.sheet{
+  position:relative;
+  width:297mm;
+  height:210mm;
+  margin:0 auto 20px;
+  display:grid;
+  grid-template-columns:100mm 100mm 97mm;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 22px 60px rgba(0,0,0,.22);
+}
+.panel{
+  position:relative;
+  min-width:0;
+  height:210mm;
+  overflow:hidden;
+  padding:10mm 9mm 9mm;
+}
+
+.fold{
+  position:absolute;z-index:50;top:0;width:.28mm;height:4mm;background:rgba(0,0,0,.30)
+}
+.fold:after{
+  content:"";position:absolute;top:202mm;left:0;width:.28mm;height:4mm;background:rgba(0,0,0,.30)
+}
+.fold--1{left:100mm}.fold--2{left:200mm}
+
+.logo{display:block;width:47mm;height:auto}
+.logo-sm{width:34mm}
+.kicker{
+  margin:0 0 3mm;
+  font-size:6.3pt;font-weight:900;line-height:1;
+  letter-spacing:1.05px;text-transform:uppercase;
+}
+.kicker-yellow{color:var(--yellow)}
+.kicker-dark{color:#111}
+.muted{color:var(--grey);font-size:7.5pt;line-height:1.5}
+
+/* OUTSIDE — BACK */
+.back{
+  display:flex;
+  flex-direction:column;
+  background:var(--paper);
+}
+.back-brand{margin-bottom:14mm}
+.back-main h2{
+  max-width:72mm;
+  margin-bottom:4mm;
+  font-size:22pt;
+  line-height:1.03;
+  letter-spacing:-.7px;
+}
+.back-main .muted{max-width:73mm;margin-bottom:7mm}
+.check-list{display:grid;gap:2.7mm}
+.check-list>div{
+  display:grid;grid-template-columns:9mm 1fr;gap:3mm;align-items:start;
+  padding:2.6mm 0;border-top:.25mm solid var(--line)
+}
+.check-list>div>span{
+  width:7mm;height:7mm;display:grid;place-items:center;
+  border-radius:50%;background:#111;color:var(--yellow);
+  font-size:4.6pt;font-weight:900
+}
+.check-list p{margin:0}
+.check-list b{display:block;font-size:6.8pt;margin-bottom:.5mm}
+.check-list small{display:block;color:var(--grey);font-size:5.6pt;line-height:1.3}
+.back-cta{
+  margin-top:auto;padding:4.5mm;background:var(--yellow)
+}
+.back-cta h3{margin-bottom:1.5mm;font-size:13pt}
+.back-cta>p:not(.kicker){margin-bottom:3mm;font-size:6.4pt;line-height:1.4}
+.rm-line{
+  display:flex;justify-content:space-between;gap:4mm;
+  padding:1.5mm 0;border-top:.25mm solid rgba(0,0,0,.27);
+  font-size:5.8pt
+}
+.legal{
+  margin:2.5mm 0 0;color:#77736b;font-size:4.55pt;line-height:1.35
+}
+
+/* OUTSIDE — COVER */
+.cover{padding:0;background:#111;color:#fff}
+.cover-photo{
+  position:absolute;inset:0;
+  background:
+    url("https://upload.wikimedia.org/wikipedia/commons/8/8e/Condominium_kuala_lumpur.jpg")
+    center 45% / cover no-repeat,
+    linear-gradient(145deg,#666,#111);
+}
+.cover-shade{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.04) 0%,rgba(0,0,0,.03) 28%,rgba(0,0,0,.30) 53%,rgba(0,0,0,.92) 82%,#111 100%);
+}
+.cover-head{
+  position:relative;z-index:3;
+  height:28mm;padding:6.5mm 9mm;
+  display:flex;align-items:flex-start;justify-content:space-between;
+  background:var(--yellow);color:#111
+}
+.cover-head span{padding-top:2mm;font-size:5.5pt;font-weight:900;letter-spacing:.8px}
+.cover-copy{
+  position:absolute;z-index:3;left:9mm;right:9mm;bottom:24mm
+}
+.cover-index{
+  display:block;margin-bottom:3mm;color:var(--yellow);
+  font-size:5.5pt;font-weight:900;letter-spacing:.8px
+}
+.cover h1{
+  margin:0 0 4mm;
+  font-size:27pt;line-height:.95;letter-spacing:-1.3px
+}
+.cover h1 em{font-style:normal;color:var(--yellow)}
+.cover-copy p{
+  width:90%;margin-bottom:0;color:#dedede;font-size:7pt;line-height:1.5
+}
+.cover-footer{
+  position:absolute;z-index:3;left:9mm;right:9mm;bottom:9mm;
+  display:flex;gap:1.2mm;flex-wrap:wrap
+}
+.cover-footer span{
+  padding:1.7mm 2.2mm;background:rgba(255,255,255,.13);
+  border:.25mm solid rgba(255,255,255,.28);
+  backdrop-filter:blur(5px);
+  font-size:4.9pt;font-weight:900;letter-spacing:.3px
+}
+.credit{
+  position:absolute;z-index:4;left:9mm;bottom:3mm;
+  color:rgba(255,255,255,.55);font-size:3.9pt
+}
+
+/* OUTSIDE — FLAP */
+.flap{padding:0;background:var(--warm)}
+.flap-photo{
+  height:72mm;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.00),rgba(0,0,0,.26)),
+    url("https://upload.wikimedia.org/wikipedia/commons/4/49/Modern_living_room_with_stylish_furniture_and_a_view_of_the_outdoors_in_a_cozy_apartment_setting.jpg")
+    center / cover no-repeat,
+    #777;
+}
+.flap-copy{padding:8mm 8mm 7mm}
+.flap h2{
+  margin-bottom:5mm;font-size:19pt;line-height:1.05;letter-spacing:-.55px
+}
+.choice-stack{display:grid;gap:2.5mm}
+.choice-stack article{
+  display:grid;grid-template-columns:10mm 1fr;gap:3mm;
+  padding:3mm;border:.3mm solid var(--line);background:rgba(255,255,255,.72)
+}
+.choice-stack article.choice-featured{
+  background:#111;color:#fff;border-color:#111
+}
+.choice-dot{
+  width:8.5mm;height:8.5mm;display:grid;place-items:center;
+  border-radius:50%;background:var(--yellow);color:#111;
+  font-size:5.2pt;font-weight:900
+}
+.choice-stack b{display:block;margin-bottom:.6mm;font-size:6.8pt}
+.choice-stack p{margin:0;color:#68655e;font-size:5.35pt;line-height:1.3}
+.choice-featured p{color:#c8c8c8}
+.open-note{
+  margin-top:4mm;padding-top:3mm;border-top:.7mm solid #111
+}
+.open-note span{display:block;margin-bottom:1mm;font-size:4.8pt;font-weight:900;letter-spacing:.6px}
+.open-note b{font-size:8.3pt}
+.credit-dark{
+  left:8mm;bottom:3mm;color:#77736b
+}
+
+/* INSIDE SHARED */
+.inside{background:var(--paper)}
+.spread-band{
+  position:absolute;z-index:10;left:0;right:0;top:0;height:41mm;
+  padding:8mm 10mm;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:12mm;
+  color:#fff;background:#111
+}
+.spread-band h2{margin:0;font-size:20pt;line-height:1.02;letter-spacing:-.65px}
+.spread-band>p{
+  max-width:92mm;margin:0;color:#c9c9c9;font-size:6.2pt;line-height:1.45
+}
+.spread-band b{color:#fff}
+.compare{
+  padding-top:50mm;
+  border-right:.25mm solid var(--line)
+}
+.compare:last-child{border-right:0}
+.product-top{
+  display:flex;align-items:center;justify-content:space-between;gap:3mm;
+  margin-bottom:4mm
+}
+.product-no{
+  color:#88847c;font-size:5.4pt;font-weight:900;letter-spacing:.6px
+}
+.product-chip{
+  padding:1.5mm 2mm;border-radius:99px;background:#ece9e2;
+  font-size:4.5pt;font-weight:900;letter-spacing:.45px
+}
+.product-chip-dark{background:#111;color:var(--yellow)}
+.compare h2{
+  margin-bottom:2mm;font-size:21pt;line-height:1;letter-spacing:-.75px
+}
+.product-line{
+  min-height:14mm;margin-bottom:5mm;color:#66635d;font-size:6.5pt;line-height:1.4
+}
+.product-symbol{
+  width:34mm;height:34mm;margin:0 auto 5mm;
+  display:grid;place-items:center;border-radius:50%;background:var(--yellow)
+}
+.product-symbol svg{
+  width:22mm;height:22mm;fill:none;stroke:#111;stroke-width:3.5;
+  stroke-linecap:round;stroke-linejoin:round
+}
+.specs{margin:0}
+.specs>div{
+  padding:2.7mm 0;border-top:.28mm solid var(--line)
+}
+.specs dt{
+  margin-bottom:.9mm;color:#77736b;font-size:4.6pt;font-weight:900;letter-spacing:.55px
+}
+.specs dd{
+  margin:0;font-size:5.55pt;line-height:1.35
+}
+.bottom-stat{
+  position:absolute;left:9mm;right:9mm;bottom:9mm;
+  padding:3.7mm 4mm;background:#111;color:#fff
+}
+.bottom-stat span{display:block;color:var(--yellow);font-size:4.5pt;font-weight:900}
+.bottom-stat strong{display:block;margin:.7mm 0;font-size:12pt}
+.bottom-stat small{color:#bbb;font-size:5pt}
+
+/* FLEXI FEATURED */
+.compare-flexi{
+  background:var(--yellow);
+  border-right:0;
+  box-shadow:inset 0 0 0 .45mm rgba(0,0,0,.09)
+}
+.recommend-tag{
+  position:absolute;right:0;top:41mm;
+  padding:2.4mm 4mm;background:#111;color:var(--yellow);
+  font-size:4.9pt;font-weight:900;letter-spacing:.55px
+}
+.compare-flexi .product-line{color:#2d2d2d}
+.flexi-diagram{
+  margin:1mm 0 5mm;
+  display:grid;grid-template-columns:1fr 6mm 1fr 6mm 1fr;
+  gap:1mm;align-items:center
+}
+.flexi-diagram>div{text-align:center}
+.flexi-diagram>div>span{
+  width:12mm;height:12mm;margin:0 auto 1mm;
+  display:grid;place-items:center;border-radius:50%;
+  background:#fff;border:.45mm solid #111;font-size:6pt;font-weight:900
+}
+.flexi-diagram .dark-node>span{background:#111;color:var(--yellow)}
+.flexi-diagram small{display:block;font-size:4pt;font-weight:900;line-height:1.15}
+.flexi-diagram>b{text-align:center;font-size:9pt}
+.specs-flexi>div{border-top-color:rgba(0,0,0,.26)}
+.specs-flexi dt{color:#413e36}
+.flexi-verdict{
+  position:absolute;left:9mm;right:9mm;bottom:9mm;
+  padding:3.3mm;
+  display:grid;grid-template-columns:9mm 1fr;gap:2.4mm;align-items:center;
+  background:#111;color:#fff
+}
+.flexi-verdict>span{
+  width:8mm;height:8mm;display:grid;place-items:center;border-radius:50%;
+  background:var(--yellow);color:#111;font-size:5.5pt
+}
+.flexi-verdict p{margin:0;font-size:5.4pt;line-height:1.3}
+.flexi-verdict b{color:var(--yellow);font-size:6.5pt}
+
+/* EZY */
+.ezy-step{
+  margin:0 0 5mm;
+  display:grid;grid-template-columns:1fr 8mm 1fr;gap:1.5mm;align-items:center
+}
+.ezy-step>div{
+  padding:3mm 2mm;text-align:center;background:var(--yellow)
+}
+.ezy-step .ezy-step-dark{background:#111;color:#fff}
+.ezy-step small,.ezy-step strong,.ezy-step span{display:block}
+.ezy-step small{font-size:4.3pt;font-weight:900}
+.ezy-step strong{margin:.6mm 0;font-size:13pt}
+.ezy-step span{font-size:4.4pt;line-height:1.2}
+.ezy-step>b{text-align:center}
+.decision-card{
+  position:absolute;left:9mm;right:9mm;bottom:9mm;
+  padding:3.5mm;background:#111;color:#fff
+}
+.decision-card>span{
+  display:block;margin-bottom:1.5mm;color:var(--yellow);
+  font-size:4.6pt;font-weight:900;letter-spacing:.55px
+}
+.decision-card p{
+  margin:1.2mm 0;padding-top:1.2mm;border-top:.25mm solid #3f3f3f;
+  font-size:5.1pt;line-height:1.25
+}
+.decision-card b{color:var(--yellow)}
+
+/* RESPONSIVE */
+@media(max-width:1220px){
+  .sheet{width:calc(100% - 20px);height:auto;min-height:700px;grid-template-columns:1fr 1fr .97fr}
+  .panel{height:auto;min-height:700px}
+  .fold{display:none}
+}
+@media(max-width:820px){
+  .toolbar{width:calc(100% - 20px);flex-direction:column;align-items:stretch}
+  .sheet{display:block;width:calc(100% - 20px)}
+  .panel{min-height:auto;padding:34px 28px}
+  .cover,.flap{min-height:720px;padding:0}
+  .spread-band{position:relative;height:auto;display:block;padding:28px}
+  .spread-band>p{margin-top:12px}
+  .compare{padding-top:34px}
+  .bottom-stat,.flexi-verdict,.decision-card{position:static;margin-top:24px}
+}
+
+/* PRINT */
+@page{size:A4 landscape;margin:0}
+@media print{
+  html,body{margin:0;background:#fff}
+  .no-print{display:none!important}
+  .sheet{
+    width:297mm;height:210mm;margin:0;grid-template-columns:100mm 100mm 97mm;
+    box-shadow:none;page-break-after:always;break-after:page
+  }
+  .sheet:last-of-type{page-break-after:auto;break-after:auto}
+  .panel{height:210mm}
+  .fold{display:block;opacity:.35}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
+
+</style>
 </head>
 <body>
 
-  <div class="viewer-bar no-print">
-    <div>
-      <strong>Maybank Home Loan Comparison</strong>
-      <span>A4 landscape · 2-sided · tri-fold</span>
+<div class="toolbar no-print">
+  <div>
+    <strong>Maybank Home Financing</strong>
+    <span>Premium A4 tri-fold preview</span>
+  </div>
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<!-- ==========================================================
+     OUTSIDE
+     order: BACK COVER | FRONT COVER | FOLD-IN FLAP
+     ========================================================== -->
+<main class="sheet outside">
+  <i class="fold fold--1"></i>
+  <i class="fold fold--2"></i>
+
+  <!-- BACK -->
+  <section class="panel back">
+    <div class="back-brand">
+      <img src="maybank-logo.png" alt="Maybank" class="logo logo-sm">
     </div>
-    <button onclick="window.print()">Print / Save as PDF</button>
+
+    <div class="back-main">
+      <p class="kicker">MAKE A CONFIDENT DECISION</p>
+      <h2>The right loan is more than just a rate.</h2>
+      <p class="muted">
+        Think about how you manage money today — and how you want your
+        mortgage to behave tomorrow.
+      </p>
+
+      <div class="check-list">
+        <div><span>01</span><p><b>Monthly comfort</b><small>What repayment level feels sustainable?</small></p></div>
+        <div><span>02</span><p><b>Cash flexibility</b><small>Will you keep extra savings available?</small></p></div>
+        <div><span>03</span><p><b>Early cash flow</b><small>Do you need lower commitments in the first few years?</small></p></div>
+        <div><span>04</span><p><b>Loan structure</b><small>Do you prefer a classic facility or something more dynamic?</small></p></div>
+      </div>
+    </div>
+
+    <div class="back-cta">
+      <p class="kicker kicker-dark">NEXT STEP</p>
+      <h3>Talk to your Relationship Manager.</h3>
+      <p>Compare the approved rate, financing amount, tenure and repayment structure before you decide.</p>
+      <div class="rm-line"><span>Relationship Manager</span><b>Your Name</b></div>
+      <div class="rm-line"><span>Branch</span><b>Maybank</b></div>
+    </div>
+
+    <p class="legal">
+      Product availability, rates, financing amount, tenure and approval are subject
+      to Maybank's credit assessment and prevailing terms and conditions. Refer to
+      the latest Product Disclosure Sheet before applying.
+    </p>
+  </section>
+
+  <!-- FRONT COVER -->
+  <section class="panel cover">
+    <div class="cover-photo"></div>
+    <div class="cover-shade"></div>
+
+    <header class="cover-head">
+      <img src="maybank-logo.png" alt="Maybank" class="logo">
+      <span>HOME FINANCING</span>
+    </header>
+
+    <div class="cover-copy">
+      <span class="cover-index">01 / HOME FINANCING</span>
+      <h1>One home.<br><em>Three ways</em><br>to finance it.</h1>
+      <p>
+        Compare Maybank MaxiHome, MaxiHome Flexi and MaxiHome Ezy —
+        then choose the structure that fits how you live and manage money.
+      </p>
+    </div>
+
+    <div class="cover-footer">
+      <span>MAXIHOME</span>
+      <span>MAXIHOME FLEXI</span>
+      <span>MAXIHOME EZY</span>
+    </div>
+
+    <small class="credit">Photo: knnkanda / Wikimedia Commons · CC BY-SA 4.0</small>
+  </section>
+
+  <!-- FOLD-IN FLAP -->
+  <section class="panel flap">
+    <div class="flap-photo"></div>
+
+    <div class="flap-copy">
+      <p class="kicker">START WITH YOU</p>
+      <h2>What should your home loan do for you?</h2>
+
+      <div class="choice-stack">
+        <article>
+          <span class="choice-dot">A</span>
+          <div>
+            <b>Keep it familiar</b>
+            <p>I want a conventional mortgage structure with facility choices.</p>
+          </div>
+        </article>
+
+        <article class="choice-featured">
+          <span class="choice-dot">B</span>
+          <div>
+            <b>Make savings work harder</b>
+            <p>I want spare cash to reduce my loan balance while staying accessible.</p>
+          </div>
+        </article>
+
+        <article>
+          <span class="choice-dot">C</span>
+          <div>
+            <b>Protect early cash flow</b>
+            <p>I want lower monthly commitments during my first five years.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="open-note">
+        <span>OPEN TO COMPARE</span>
+        <b>Three products. One simple decision.</b>
+      </div>
+    </div>
+
+    <small class="credit credit-dark">Interior: Shixart1985 / Wikimedia Commons · CC BY 2.0</small>
+  </section>
+</main>
+
+<!-- ==========================================================
+     INSIDE SPREAD
+     one product per panel
+     ========================================================== -->
+<main class="sheet inside">
+  <i class="fold fold--1"></i>
+  <i class="fold fold--2"></i>
+  <div class="spread-band">
+    <div>
+      <p class="kicker kicker-yellow">COMPARE AT A GLANCE</p>
+      <h2>Same goal. Different ways to get there.</h2>
+    </div>
+    <p>Scan the same four questions across each product: <b>how it works, best for, flexibility, and what to consider.</b></p>
   </div>
 
-  <!-- =========================================================
-       SIDE 1 — OUTSIDE
-       Print order: BACK | FRONT COVER | FOLD-IN FLAP
-       ========================================================= -->
-  <main class="sheet outside">
-    <span class="fold-guide fold-guide--one"></span>
-    <span class="fold-guide fold-guide--two"></span>
+  <!-- MAXIHOME -->
+  <section class="panel compare compare-classic">
+    <div class="product-top">
+      <span class="product-no">01</span>
+      <span class="product-chip">CLASSIC CHOICE</span>
+    </div>
 
-    <!-- BACK COVER -->
-    <section class="panel back-panel">
+    <h2>MaxiHome</h2>
+    <p class="product-line">A flexible home loan with multiple facility choices.</p>
+
+    <div class="product-symbol symbol-home">
+      <svg viewBox="0 0 64 64">
+        <path d="M8 30L32 10l24 20"></path>
+        <path d="M14 27v27h36V27"></path>
+        <path d="M26 54V39h12v15"></path>
+      </svg>
+    </div>
+
+    <dl class="specs">
       <div>
-        <img src="maybank-logo.png" alt="Maybank" class="logo logo--small" />
-
-        <p class="eyebrow">READY TO TAKE THE NEXT STEP?</p>
-        <h2>Prepare, compare, then decide.</h2>
-        <p class="body-copy">
-          Your final home-loan package should reflect your income, monthly
-          commitments, property details and preferred repayment style.
-        </p>
-
-        <div class="steps">
-          <article>
-            <span class="step-no">01</span>
-            <div>
-              <strong>Check affordability</strong>
-              <p>Review income, existing commitments and comfortable monthly repayment.</p>
-            </div>
-          </article>
-
-          <article>
-            <span class="step-no">02</span>
-            <div>
-              <strong>Prepare documents</strong>
-              <p>NRIC, income evidence and property documents are typically required.</p>
-            </div>
-          </article>
-
-          <article>
-            <span class="step-no">03</span>
-            <div>
-              <strong>Compare the structure</strong>
-              <p>Look beyond the rate: consider cash flow, flexibility and repayment behaviour.</p>
-            </div>
-          </article>
-
-          <article>
-            <span class="step-no">04</span>
-            <div>
-              <strong>Speak to your RM</strong>
-              <p>Confirm eligibility, approved pricing and the latest terms before committing.</p>
-            </div>
-          </article>
-        </div>
+        <dt>HOW IT WORKS</dt>
+        <dd>Choose a term loan, overdraft, or a combination of both.</dd>
       </div>
-
       <div>
-        <div class="contact-card">
-          <small>YOUR RELATIONSHIP MANAGER</small>
-          <strong>Your Name</strong>
-          <span>Maybank · Your Branch</span>
-        </div>
-
-        <div class="mini-links">
-          <span>Maybank Home Loans</span>
-          <strong>maybank2u.com.my</strong>
-        </div>
-
-        <p class="legal">
-          Product availability, financing amount, rate, tenure and approval are
-          subject to Maybank's credit assessment and prevailing terms and conditions.
-          Product features may change. Refer to the latest Product Disclosure Sheet
-          before applying.
-        </p>
+        <dt>BEST FOR</dt>
+        <dd>Customers who want a familiar mortgage structure with broad facility choices.</dd>
       </div>
-    </section>
-
-    <!-- FRONT COVER -->
-    <section class="panel cover-panel">
-      <div class="cover-photo"></div>
-      <div class="cover-overlay"></div>
-
-      <header class="cover-header">
-        <img src="maybank-logo.png" alt="Maybank" class="logo" />
-        <span>HOME FINANCING</span>
-      </header>
-
-      <div class="cover-copy">
-        <p class="eyebrow eyebrow--yellow">YOUR HOME. YOUR PRIORITIES. YOUR CHOICE.</p>
-        <h1>Find the home loan<br />that <em>fits your life.</em></h1>
-        <p>
-          Compare three Maybank home-loan packages and discover how different
-          repayment structures can support different financial priorities.
-        </p>
-
-        <div class="cover-products">
-          <span>MaxiHome</span>
-          <span>MaxiHome Flexi</span>
-          <span>MaxiHome Ezy</span>
-        </div>
+      <div>
+        <dt>FLEXIBILITY</dt>
+        <dd>Repayment options can be structured around present and future needs.</dd>
       </div>
-
-      <div class="photo-credit">
-        KL skyline photo: Sam Hidayat / Wikimedia Commons, CC BY-SA 4.0
+      <div>
+        <dt>WHAT TO CONSIDER</dt>
+        <dd>If you expect to keep meaningful spare savings, a dedicated Flexi structure may use that cash more actively.</dd>
       </div>
-    </section>
+    </dl>
 
-    <!-- FOLD-IN FLAP -->
-    <section class="panel flap-panel">
-      <p class="eyebrow">START WITH WHAT MATTERS TO YOU</p>
-      <h2>Different priorities call for different structures.</h2>
+    <div class="bottom-stat">
+      <span>UP TO</span>
+      <strong>35 years</strong>
+      <small>or age 70, whichever comes first</small>
+    </div>
+  </section>
 
-      <div class="priority-wheel">
-        <div class="priority-centre">
-          <span>YOUR</span>
-          <strong>PRIORITY</strong>
-        </div>
+  <!-- FLEXI -->
+  <section class="panel compare compare-flexi">
+    <div class="recommend-tag">RECOMMENDED FIT</div>
 
-        <article class="priority priority--one">
-          <div class="priority-icon">↔</div>
-          <strong>Flexibility</strong>
-          <p>Want extra cash to work against your loan while remaining accessible?</p>
-        </article>
+    <div class="product-top">
+      <span class="product-no">02</span>
+      <span class="product-chip product-chip-dark">FLEXIBLE CHOICE</span>
+    </div>
 
-        <article class="priority priority--two">
-          <div class="priority-icon">↓</div>
-          <strong>Lower payments now</strong>
-          <p>Need more cash flow during the first few years of home ownership?</p>
-        </article>
+    <h2>MaxiHome Flexi</h2>
+    <p class="product-line">Let spare cash work against your mortgage.</p>
 
-        <article class="priority priority--three">
-          <div class="priority-icon">⌂</div>
-          <strong>Conventional structure</strong>
-          <p>Prefer a broader choice of term-loan, overdraft or combined facilities?</p>
-        </article>
+    <div class="flexi-diagram">
+      <div>
+        <span>RM</span>
+        <small>EXTRA CASH</small>
       </div>
-
-      <div class="teaser">
-        <small>THE KEY QUESTION</small>
-        <strong>How do you want your home loan to behave?</strong>
-        <p>Open the brochure to compare all three choices.</p>
+      <b>→</b>
+      <div class="dark-node">
+        <span>↓</span>
+        <small>LOAN BALANCE</small>
       </div>
-    </section>
-  </main>
-
-  <!-- =========================================================
-       SIDE 2 — INSIDE
-       Print order: MAXIHOME | FLEXI | EZY + RECOMMENDATION
-       ========================================================= -->
-  <main class="sheet inside">
-    <span class="fold-guide fold-guide--one"></span>
-    <span class="fold-guide fold-guide--two"></span>
-
-    <!-- MAXIHOME -->
-    <section class="panel product-panel product-panel--standard">
-      <div class="inside-brand">
-        <img src="maybank-logo.png" alt="Maybank" class="logo logo--small" />
-        <span>HOME LOAN COMPARISON</span>
+      <b>→</b>
+      <div>
+        <span>%</span>
+        <small>LESS INTEREST</small>
       </div>
+    </div>
 
-      <p class="eyebrow">OPTION 01</p>
-      <h2>MaxiHome</h2>
-      <p class="product-tagline">Flexible facility choices for a more conventional mortgage structure.</p>
-
-      <div class="hero-icon hero-icon--line">
-        <svg viewBox="0 0 96 96" aria-hidden="true">
-          <path d="M13 46L48 18l35 28"></path>
-          <path d="M22 41v38h52V41"></path>
-          <path d="M38 79V57h20v22"></path>
-        </svg>
+    <dl class="specs specs-flexi">
+      <div>
+        <dt>HOW IT WORKS</dt>
+        <dd>Savings, current and loan facilities are combined under one account.</dd>
       </div>
-
-      <div class="product-feature">
-        <span>01</span>
-        <div>
-          <strong>Choice of facility</strong>
-          <p>Choose a term loan, overdraft, or a combination of both.</p>
-        </div>
+      <div>
+        <dt>BEST FOR</dt>
+        <dd>Customers with available savings who want flexibility and greater control over interest cost.</dd>
       </div>
-
-      <div class="product-feature">
-        <span>02</span>
-        <div>
-          <strong>Flexible repayment options</strong>
-          <p>Designed to support present and future repayment needs.</p>
-        </div>
+      <div>
+        <dt>FLEXIBILITY</dt>
+        <dd>Pay extra when you can; excess payments may be withdrawn when needed, subject to terms.</dd>
       </div>
-
-      <div class="product-feature">
-        <span>03</span>
-        <div>
-          <strong>Long repayment period</strong>
-          <p>Up to 35 years or age 70, whichever comes first.</p>
-        </div>
+      <div>
+        <dt>WHY IT STANDS OUT</dt>
+        <dd>Your spare cash can reduce the outstanding amount used for interest calculation without being permanently locked away.</dd>
       </div>
+    </dl>
 
-      <div class="best-for">
-        <small>BEST FOR</small>
-        <strong>Customers who value a familiar mortgage structure with multiple facility choices.</strong>
+    <div class="flexi-verdict">
+      <span>★</span>
+      <p><b>Strongest overall fit</b><br>when flexibility + existing savings matter most.</p>
+    </div>
+  </section>
+
+  <!-- EZY -->
+  <section class="panel compare compare-ezy">
+    <div class="product-top">
+      <span class="product-no">03</span>
+      <span class="product-chip">CASH-FLOW FIRST</span>
+    </div>
+
+    <h2>MaxiHome Ezy</h2>
+    <p class="product-line">Lower commitments now, full instalments later.</p>
+
+    <div class="ezy-step">
+      <div>
+        <small>YEARS</small>
+        <strong>1–5</strong>
+        <span>lower monthly commitment</span>
       </div>
-
-      <div class="watch">
-        <small>CONSIDER THIS</small>
-        <p>
-          If your main priority is actively using spare savings to reduce interest,
-          a dedicated Flexi structure may be more aligned to that behaviour.
-        </p>
+      <b>→</b>
+      <div class="ezy-step-dark">
+        <small>YEAR</small>
+        <strong>6+</strong>
+        <span>full instalment begins</span>
       </div>
-    </section>
+    </div>
 
-    <!-- FLEXI -->
-    <section class="panel product-panel product-panel--flexi">
-      <div class="recommended-ribbon">RECOMMENDED FIT</div>
-
-      <p class="eyebrow eyebrow--dark">OPTION 02</p>
-      <h2>MaxiHome Flexi</h2>
-      <p class="product-tagline">
-        A home loan that lets spare cash work harder against your outstanding balance.
-      </p>
-
-      <div class="flexi-flow">
-        <div>
-          <span class="flow-circle">RM</span>
-          <strong>Extra cash</strong>
-        </div>
-        <i>→</i>
-        <div>
-          <span class="flow-circle flow-circle--dark">↓</span>
-          <strong>Lower principal</strong>
-        </div>
-        <i>→</i>
-        <div>
-          <span class="flow-circle">%</span>
-          <strong>Save interest</strong>
-        </div>
+    <dl class="specs">
+      <div>
+        <dt>HOW IT WORKS</dt>
+        <dd>A stepped-up repayment structure with lower monthly commitments during the first five years.</dd>
       </div>
-
-      <div class="product-feature product-feature--flexi">
-        <span>01</span>
-        <div>
-          <strong>3-in-1 account concept</strong>
-          <p>Combines savings, current and loan facilities under one account.</p>
-        </div>
+      <div>
+        <dt>BEST FOR</dt>
+        <dd>Customers who want more cash in hand for moving, renovation or other early home-ownership costs.</dd>
       </div>
-
-      <div class="product-feature product-feature--flexi">
-        <span>02</span>
-        <div>
-          <strong>Pay extra when you can</strong>
-          <p>Additional payments reduce the outstanding loan balance used for interest calculation.</p>
-        </div>
+      <div>
+        <dt>FLEXIBILITY</dt>
+        <dd>You can still make extra payments to help save interest.</dd>
       </div>
-
-      <div class="product-feature product-feature--flexi">
-        <span>03</span>
-        <div>
-          <strong>Access excess payments</strong>
-          <p>Excess payments can be withdrawn when needed, subject to the product terms.</p>
-        </div>
+      <div>
+        <dt>WHAT TO CONSIDER</dt>
+        <dd>Repayments step up later, so make sure the full instalment from year six fits your longer-term budget.</dd>
       </div>
+    </dl>
 
-      <div class="best-for best-for--dark">
-        <small>BEST FOR</small>
-        <strong>Customers with available savings who want repayment flexibility and greater control over interest cost.</strong>
-      </div>
-
-      <div class="why-recommended">
-        <span>★</span>
-        <div>
-          <small>WHY THIS STANDS OUT</small>
-          <p>
-            If you already maintain savings and want those funds to help reduce your
-            mortgage cost without permanently locking them away, Flexi offers the
-            strongest match of the three structures.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EZY + DECISION -->
-    <section class="panel product-panel product-panel--ezy">
-      <p class="eyebrow">OPTION 03</p>
-      <h2>MaxiHome Ezy</h2>
-      <p class="product-tagline">
-        Lower monthly commitments during the first five years to create more early cash flow.
-      </p>
-
-      <div class="ezy-visual">
-        <div class="ezy-year">
-          <span>YEARS</span>
-          <strong>1–5</strong>
-          <small>LOWER COMMITMENT</small>
-        </div>
-        <div class="ezy-arrow">→</div>
-        <div class="ezy-year ezy-year--dark">
-          <span>YEAR</span>
-          <strong>6+</strong>
-          <small>FULL INSTALMENT</small>
-        </div>
-      </div>
-
-      <div class="product-feature">
-        <span>01</span>
-        <div>
-          <strong>Lower commitment for first 5 years</strong>
-          <p>Designed to preserve more cash in hand during the early years.</p>
-        </div>
-      </div>
-
-      <div class="product-feature">
-        <span>02</span>
-        <div>
-          <strong>Useful for moving-in costs</strong>
-          <p>Extra early cash flow can help with renovation and other home-ownership expenses.</p>
-        </div>
-      </div>
-
-      <div class="product-feature">
-        <span>03</span>
-        <div>
-          <strong>Still allows extra payments</strong>
-          <p>You can pay more when you wish to help save on interest.</p>
-        </div>
-      </div>
-
-      <div class="best-for">
-        <small>BEST FOR</small>
-        <strong>Customers whose biggest priority is reducing monthly cash-flow pressure during the first five years.</strong>
-      </div>
-
-      <div class="decision-box">
-        <p class="eyebrow eyebrow--yellow">QUICK DECISION GUIDE</p>
-        <div>
-          <span>Want a traditional flexible mortgage?</span>
-          <strong>MaxiHome</strong>
-        </div>
-        <div>
-          <span>Want savings to work against the loan?</span>
-          <strong>MaxiHome Flexi ★</strong>
-        </div>
-        <div>
-          <span>Want lower commitments for the first 5 years?</span>
-          <strong>MaxiHome Ezy</strong>
-        </div>
-      </div>
-    </section>
-  </main>
+    <div class="decision-card">
+      <span>QUICK GUIDE</span>
+      <p><b>Classic structure?</b> MaxiHome</p>
+      <p><b>Savings + flexibility?</b> MaxiHome Flexi ★</p>
+      <p><b>Lower early commitment?</b> MaxiHome Ezy</p>
+    </div>
+  </section>
+</main>
 
 </body>
 </html>
